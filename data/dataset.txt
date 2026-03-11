@@ -1,0 +1,3 @@
+Hello how are you
+Machine learning is fun
+Rust is a fast programming language

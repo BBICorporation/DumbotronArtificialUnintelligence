@@ -57,7 +57,7 @@ A deliberately tiny LLM (≈5K – 3M parameters approx) built with **TensorFlow
 > 
 > Typical setup includes:
 > 
-> * Python 3.10+
+> * Python 3.9
 > * TensorFlow
 > * SentencePiece
 > * NumPy

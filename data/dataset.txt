@@ -1,3 +1,132 @@
-Hello how are you
-Machine learning is fun
-Rust is a fast programming language
+Instruction: Greet the user
+Response: Hello how are you
+
+Instruction: Describe machine learning
+Response: Machine learning is a field of artificial intelligence where models learn patterns from data.
+
+Instruction: Describe the Rust programming language
+Response: Rust is a fast systems programming language focused on safety and performance.
+
+Instruction: Explain how computers represent data
+Response: Computers process information using binary digits called bits.
+
+Instruction: Explain what a CPU does
+Response: A CPU executes instructions stored in memory.
+
+Instruction: Explain what RAM does
+Response: Random Access Memory temporarily stores data for fast access.
+
+Instruction: Explain the purpose of a GPU
+Response: A GPU is optimized for parallel computation.
+
+Instruction: Describe neural networks
+Response: A neural network consists of layers of interconnected nodes.
+
+Instruction: Explain deep learning
+Response: Deep learning uses multiple neural network layers to learn complex patterns.
+
+Instruction: Explain natural language processing
+Response: Natural language processing allows computers to understand human language.
+
+Instruction: Explain tokenization
+Response: Tokenization converts text into smaller units called tokens.
+
+Instruction: Explain what a tokenizer does
+Response: A tokenizer builds a vocabulary from training data.
+
+Instruction: Explain transformers in machine learning
+Response: Transformers use attention mechanisms to process sequences.
+
+Instruction: Explain self attention
+Response: Self attention allows a model to focus on relevant tokens.
+
+Instruction: Explain context window
+Response: A context window defines how many tokens a model can see at once.
+
+Instruction: Explain embeddings
+Response: Embedding layers convert tokens into numerical vectors.
+
+Instruction: Explain gradient descent
+Response: Gradient descent is used to minimize training loss.
+
+Instruction: Explain backpropagation
+Response: Backpropagation updates neural network weights during training.
+
+Instruction: What is TensorFlow
+Response: TensorFlow is a library used for machine learning.
+
+Instruction: What is PyTorch
+Response: PyTorch is widely used for deep learning research.
+
+Instruction: What is Linux
+Response: Linux is a popular operating system for servers and development.
+
+Instruction: What is a kernel
+Response: A kernel manages hardware resources in an operating system.
+
+Instruction: Explain file systems
+Response: A file system organizes data on storage devices.
+
+Instruction: Explain networking
+Response: Networking allows computers to communicate with each other.
+
+Instruction: Explain TCP
+Response: TCP ensures reliable data transmission across networks.
+
+Instruction: Explain UDP
+Response: UDP provides fast but unreliable communication.
+
+Instruction: Explain an IP address
+Response: An IP address uniquely identifies a device on a network.
+
+Instruction: Explain a router
+Response: A router forwards packets between networks.
+
+Instruction: Explain HTTP
+Response: HTTP is a protocol used to transfer web pages.
+
+Instruction: Explain HTTPS
+Response: HTTPS adds encryption using TLS.
+
+Instruction: Explain encryption
+Response: Encryption protects data from unauthorized access.
+
+Instruction: Explain hash functions
+Response: Hash functions convert data into fixed length values.
+
+Instruction: What is Git
+Response: Git is a version control system for tracking code changes.
+
+Instruction: What is a compiler
+Response: A compiler converts source code into machine code.
+
+Instruction: What is an interpreter
+Response: An interpreter executes code line by line.
+
+Instruction: Explain databases
+Response: Databases store structured information.
+
+Instruction: Explain SQL
+Response: SQL is used to query relational databases.
+
+Instruction: Explain APIs
+Response: APIs allow software systems to communicate with each other.
+
+Instruction: Explain cloud computing
+Response: Cloud computing provides scalable computing resources.
+
+Instruction: Explain containers
+Response: Containers package applications with their dependencies.
+
+Instruction: What is Docker
+Response: Docker is commonly used for containerization.
+
+Instruction: What is Kubernetes
+Response: Kubernetes manages containerized applications at scale.
+
+Instruction: Explain large language models
+Response: Large language models generate text based on probability.
+
+Instruction: Explain inference in machine learning
+Response: Inference is the process of generating predictions from a trained model.
+

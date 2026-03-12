@@ -9,13 +9,13 @@ sp.load("tokenize/tokenizer.model")
 with open("data/dataset.txt", "r", encoding="utf-8") as f:
     text = f.read()
 
-token_ids = sp.encode(text)
+tokenIds = sp.encode(text)
 
 # Displaying some dokens
-print("First 50 tokens:", token_ids[:50])
+print("First 50 tokens:", tokenIds[:50])
 print("Vocab size:", sp.vocab_size())
 
 # Saving the tokenids
-np.save("data/tokenIds.npy", token_ids)
+np.save("data/tokenIds.npy", tokenIds)
 
-print("Saved token_ids.npy")
+print("Saved tokenIds.npy")

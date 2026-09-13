@@ -16,29 +16,32 @@ The project focuses on understanding how LLMs work internally by implementing th
 
 ```
 DumbotronArtificialUnintelligence/
-├── data/
-│   ├── dataset.txt
-│   ├── dataset_long.txt
+├── data
+│   ├── datasets
+│   │   ├── dataset_44001.txt
+│   │   └── dataset_50.txt
 │   └── prepareDataset.py
-│
-├── model/
+├── model
 │   ├── attention.py
 │   ├── feedForward.py
 │   ├── positionEncoding.py
 │   ├── tokenEmbeding.py
+│   ├── train.py
 │   ├── transformerBlock.py
-│   ├── transformer.py
-│   └── train.py
-│
-├── tokenizer/
+│   └── transformer.py
+├── tokenizer
 │   ├── tokenizer.py
 │   └── trainTokenizer.py
-│
-├── countMatrics.py
+├── utils
+│   ├── estimateEpochs.py
+│   ├── estimateLearningRate.py
+│   └── estimateVocabSize.py
 ├── generate.py
 ├── globalSettings.py
 ├── main.py
-└── requirments.txt
+├── requirments.txt
+├── countMatrics.py
+└── README.md
 ```
 
 ## Pipeline

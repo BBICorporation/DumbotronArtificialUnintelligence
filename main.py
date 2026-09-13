@@ -6,10 +6,16 @@ import data.prepareDataset as prepareDataset
 import model.train as trainModule
 import generate as generateModule
 import countMatrics
+import utils.estimateVocabSize as estimateVocabSize
+import utils.estimateEpochs as estimateEpochs
+import utils.estimateLearningRate as estimateLearningRate
 
 
 def fileArgumentsParse():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(
+        prog="Dumbotron Artificial Unintelligence",
+        description="A small Transformer-based Large Language Model built from scratch using PyTorch."
+    )
 
     parser.add_argument(
         "--tokenize",
@@ -36,12 +42,16 @@ def fileArgumentsParse():
         "--prompt", type=str, default="", help="Prompt to generate from"
     )
     parser.add_argument(
+        "--dataset", type=str, default="./data/dataset/dataset.txt", help="Select dataset location"
+    )
+    parser.add_argument(
         "--maxNewTokens", type=int, default=200, help="Max tokens to generate"
     )
     parser.add_argument(
         "--temperature", type=float, default=1.0, help="Sampling temperature"
     )
     parser.add_argument("--topK", type=int, default=50, help="Top-k sampling")
+    parser.add_argument("--contextWindow", type=int,default=globalSettings.CONTEXT_WINDOW, help="Context window size")
 
     return parser.parse_args()
 
@@ -49,20 +59,24 @@ def fileArgumentsParse():
 def main():
     args = fileArgumentsParse()
 
+    VOCAB_SIZE = estimateVocabSize.estimateVocabSize(args.dataset)
+    EPOCHS = estimateEpochs.estimateEpochs(args.dataset)
+    LEARNING_RATE = estimateLearningRate.estimateLearningRate(args.dataset)
+
     if args.tokenize:
         trainTokenizer.trainTokenizer(
-            globalSettings.DATASET_LOCATION,
+            args.dataset,
             globalSettings.TOKENIZER_PREFIX,
-            globalSettings.VOCAB_SIZE,
+            VOCAB_SIZE,
         )
-        tokenizerModule.tokenizer()
+        tokenizerModule.tokenizer(args.dataset)
 
     if args.prepareDataset:
         prepareDataset.prepareDataset()
 
     if args.train:
         trainModule.train(
-            vocabSize=globalSettings.VOCAB_SIZE,
+            vocabSize=VOCAB_SIZE,
             embedDim=globalSettings.EMBED_DIM,
             numHeads=globalSettings.NUM_HEADS,
             ffDim=globalSettings.FF_DIM,
@@ -71,15 +85,15 @@ def main():
             contextWindow=globalSettings.CONTEXT_WINDOW,
             dropout=globalSettings.DROPOUT,
             batchSize=globalSettings.BATCH_SIZE,
-            learningRate=globalSettings.LEARNING_RATE,
-            epochs=globalSettings.EPOCHS,
+            learningRate=LEARNING_RATE,
+            epochs=EPOCHS,
             modelSavePath=globalSettings.MODEL_SAVE_PATH,
         )
 
     if args.generate:
         output = generateModule.generate(
             prompt=args.prompt,
-            vocabSize=globalSettings.VOCAB_SIZE,
+            vocabSize=VOCAB_SIZE,
             embedDim=globalSettings.EMBED_DIM,
             numHeads=globalSettings.NUM_HEADS,
             ffDim=globalSettings.FF_DIM,
@@ -95,7 +109,7 @@ def main():
         print(output)
     
     if args.countMatrics:
-        countMatrics.countMatrics(globalSettings.MODEL_SAVE_PATH)
+        countMatrics.countMatrics(globalSettings.MODEL_SAVE_PATH, args.dataset)
 
 
 if __name__ == "__main__":

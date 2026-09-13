@@ -3,7 +3,7 @@ import numpy as np
 import sentencepiece as spm
 
 
-def countMatrics(MODEL_SAVE_PATH):
+def countMatrics(MODEL_SAVE_PATH, DATASET_PATH):
     # Load model
     state_dict = torch.load(MODEL_SAVE_PATH, map_location="cpu")
 
@@ -18,7 +18,7 @@ def countMatrics(MODEL_SAVE_PATH):
     sp.Load("tokenizer/data/tokenizer.model")
 
     # Load dataset
-    with open("data/dataset.txt", "r", encoding="utf-8") as f:
+    with open(DATASET_PATH, "r", encoding="utf-8") as f:
         lines = f.readlines()
 
     # Statistics

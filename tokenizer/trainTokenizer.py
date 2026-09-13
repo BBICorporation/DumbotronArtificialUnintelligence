@@ -1,9 +1,9 @@
 import sentencepiece as spm
 
 # Train the tokenizer
-def trainTokenizer(DATASET_LOCATION, TOKENIZER_PREFIX, VOCAB_SIZE):
+def trainTokenizer(DATASET_PATH, TOKENIZER_PREFIX, VOCAB_SIZE):
     spm.SentencePieceTrainer.train(
-        input=DATASET_LOCATION,
+        input=DATASET_PATH,
         model_prefix=TOKENIZER_PREFIX,
         vocab_size=VOCAB_SIZE,
         model_type="bpe",

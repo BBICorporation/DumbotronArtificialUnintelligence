@@ -1,2 +1,6 @@
 /venv/
 *__pycache__*
+model/saved
+*.pt
+tokenizer/data/
+data/*.npy

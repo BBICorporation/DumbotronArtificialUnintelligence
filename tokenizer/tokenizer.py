@@ -1,13 +1,13 @@
 import sentencepiece as spm
 import numpy as np
 
-def tokenizer():
+def tokenizer(DATASET_PATH):
     # Load the trained tokenizer
     sp = spm.SentencePieceProcessor()
     sp.load("tokenizer/data/tokenizer.model")
     
     # Encode the text
-    with open("data/datasets.txt", "r", encoding="utf-8") as f:
+    with open(DATASET_PATH, "r", encoding="utf-8") as f:
         text = f.read()
     
     tokenIds = sp.encode(text)

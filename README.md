@@ -1,11 +1,11 @@
 # DumbotronArtificialUnintelligence
 
-A deliberately tiny LLM (≈5K – 3M parameters approx) built with **PyTorch** and runnable locally via **Python script** after conversion.
+An artificial intelligence that can generate text based on the given context.
 
 ---
 
 > [!IMPORTANT]
-> This is the base version only with the tokenizer; the further things, like the transformer and generating the file, are developed separately by the 2 members mentioned below.
+> This joint repo. Multiple versions are developed separately by the other mentioned below.
 >
 > - [Nishant Bhardwaj](https://github.com/blabhardwaj)
 > - [BIGBEASTISHANK](https://github.com/BIGBEASTISHANK)
